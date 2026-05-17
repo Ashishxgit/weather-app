@@ -1,6 +1,6 @@
 // ── CONFIG ─────────────────────────────────────────────
 // Get your FREE API key at: https://openweathermap.org/api
-const API_KEY = "ENTER_YOUR_API_KEY_HERE";
+const API_KEY = "81725f5576969c80f311b80a9460e9fd";
 
 // ── SAMPLE DATA (shown before any search) ──────────────
 const SAMPLE_DATA = {
