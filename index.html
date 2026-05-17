@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app" id="app">
+    <div class="card">
+
+      <!-- Header: date/time + unit toggle -->
+      <div class="card-header">
+        <div class="datetime">
+          <div id="date">Monday, Jan 1</div>
+          <div id="clock">00:00:00</div>
+        </div>
+        <button class="unit-btn" id="unitBtn">°F</button>
+      </div>
+
+      <!-- Search bar -->
+      <div class="search-bar">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Search city..."
+          autocomplete="off"
+        />
+        <button id="searchBtn">→</button>
+      </div>
+
+      <!-- Error message -->
+      <div class="error-box" id="errorBox"></div>
+
+      <!-- API notice -->
+      <div class="notice-box" id="noticeBox">
+        ⚠️ Using sample data. Add your free API key from
+        <strong>openweathermap.org</strong> to <code>script.js</code>.
+      </div>
+
+      <!-- Main weather display -->
+      <div class="weather-body" id="weatherBody">
+
+        <!-- City name -->
+        <div class="city-name">
+          <span id="cityName">New York</span>
+          <span class="country" id="country">US</span>
+        </div>
+
+        <!-- Temperature + emoji -->
+        <div class="temp-row">
+          <div class="temp-block">
+            <span id="tempValue">24</span>
+            <span class="temp-unit" id="tempUnit">°C</span>
+          </div>
+          <span class="weather-emoji" id="weatherEmoji">☀️</span>
+        </div>
+
+        <!-- Description + feels like -->
+        <div class="description" id="description">Clear sky</div>
+        <div class="feels-like" id="feelsLike">
+          Feels like 23°C &nbsp;·&nbsp; H: 27° &nbsp; L: 20°
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Stats grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-icon">💧</span>
+            <span class="stat-label">Humidity</span>
+            <span class="stat-value" id="humidity">55%</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">💨</span>
+            <span class="stat-label">Wind</span>
+            <span class="stat-value" id="wind">5.2 m/s</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🧭</span>
+            <span class="stat-label">Direction</span>
+            <span class="stat-value" id="windDir">SW</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">📊</span>
+            <span class="stat-label">Pressure</span>
+            <span class="stat-value" id="pressure">1013 hPa</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🌅</span>
+            <span class="stat-label">Sunrise</span>
+            <span class="stat-value" id="sunrise">06:12 AM</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🌇</span>
+            <span class="stat-label">Sunset</span>
+            <span class="stat-value" id="sunset">07:52 PM</span>
+          </div>
+        </div>
+
+        <!-- Visibility -->
+        <div class="visibility-bar">
+          <span>👁 Visibility</span>
+          <span id="visibility">10.0 km</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

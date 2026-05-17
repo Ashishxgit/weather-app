@@ -1,0 +1,283 @@
+/* ── Reset & Base ─────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  transition: background 1.2s ease;
+}
+
+/* ── Background Themes ────────────────────────── */
+body.bg-clear        { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+body.bg-clouds       { background: linear-gradient(135deg, #89a0b8 0%, #c9d6df 100%); }
+body.bg-rain         { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); }
+body.bg-drizzle      { background: linear-gradient(135deg, #3a7bd5 0%, #89b4d1 100%); }
+body.bg-thunderstorm { background: linear-gradient(135deg, #1a1a2e 0%, #4a4a8a 100%); }
+body.bg-snow         { background: linear-gradient(135deg, #a8c0ff 0%, #edf2f7 100%); }
+body.bg-mist         { background: linear-gradient(135deg, #757f9a 0%, #d7dde8 100%); }
+body.bg-haze         { background: linear-gradient(135deg, #c2a06e 0%, #e8d5b7 100%); }
+body.bg-default      { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+
+/* ── Card ─────────────────────────────────────── */
+.card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* ── Card Header ──────────────────────────────── */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 0;
+}
+
+.datetime #date {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.datetime #clock {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.unit-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  color: #fff;
+  padding: 6px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+
+.unit-btn:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* ── Search Bar ───────────────────────────────── */
+.search-bar {
+  display: flex;
+  gap: 8px;
+  padding: 16px 24px 0;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-bar input:focus {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.search-bar button {
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+.search-bar button:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Error & Notice Boxes ─────────────────────── */
+.error-box {
+  display: none;
+  margin: 10px 24px 0;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(255, 80, 80, 0.25);
+  font-size: 13px;
+}
+
+.error-box.visible {
+  display: block;
+}
+
+.notice-box {
+  margin: 10px 24px 0;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: rgba(255, 220, 50, 0.25);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.notice-box.hidden {
+  display: none;
+}
+
+/* ── Weather Body ─────────────────────────────── */
+.weather-body {
+  padding: 20px 24px 24px;
+}
+
+/* City Name */
+.city-name {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.city-name .country {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.75;
+  margin-left: 8px;
+}
+
+/* Temperature Row */
+.temp-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 12px 0 4px;
+}
+
+.temp-block {
+  display: flex;
+  align-items: flex-start;
+}
+
+.temp-block #tempValue {
+  font-size: 80px;
+  font-weight: 200;
+  line-height: 1;
+}
+
+.temp-unit {
+  font-size: 32px;
+  font-weight: 300;
+  margin-top: 14px;
+}
+
+.weather-emoji {
+  font-size: 56px;
+  margin-left: auto;
+}
+
+/* Description */
+.description {
+  font-size: 16px;
+  opacity: 0.85;
+  text-transform: capitalize;
+  margin-bottom: 4px;
+}
+
+.feels-like {
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 18px 0;
+}
+
+/* ── Stats Grid ───────────────────────────────── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 14px 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-icon {
+  font-size: 22px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ── Visibility Bar ───────────────────────────── */
+.visibility-bar {
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.visibility-bar span:last-child {
+  font-weight: 700;
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 460px) {
+  .temp-block #tempValue {
+    font-size: 60px;
+  }
+
+  .weather-emoji {
+    font-size: 42px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
