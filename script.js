@@ -56,7 +56,6 @@ const unitBtn     = document.getElementById("unitBtn");
 const cityInput   = document.getElementById("cityInput");
 const searchBtn   = document.getElementById("searchBtn");
 const errorBox    = document.getElementById("errorBox");
-const noticeBox   = document.getElementById("noticeBox");
 
 // weather display elements
 const cityNameEl  = document.getElementById("cityName");
