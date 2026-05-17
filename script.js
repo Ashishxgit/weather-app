@@ -186,7 +186,7 @@ async function fetchWeather(city) {
 
     const data    = await res.json();
     currentData   = data;
-    noticeBox.classList.add("hidden"); // hide sample-data notice
+    
     renderWeather(data);
 
   } catch (err) {
@@ -208,10 +208,7 @@ unitBtn.addEventListener("click", () => {
 searchBtn.addEventListener("click", () => {
   const city = cityInput.value.trim();
   if (!city) return;
-  if (API_KEY === "ENTER_YOUR_API_KEY_HERE") {
-    showError("Please add your API key in script.js first.");
-    return;
-  }
+  
   fetchWeather(city);
 });
 
