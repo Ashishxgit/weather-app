@@ -1,8 +1,6 @@
-// ── CONFIG ─────────────────────────────────────────────
-// Get your FREE API key at: https://openweathermap.org/api
+
 const API_KEY = "81725f5576969c80f311b80a9460e9fd";
 
-// ── SAMPLE DATA (shown before any search) ──────────────
 const SAMPLE_DATA = {
   name: "New York",
   sys: { country: "US", sunrise: 1716019200, sunset: 1716069600 },
